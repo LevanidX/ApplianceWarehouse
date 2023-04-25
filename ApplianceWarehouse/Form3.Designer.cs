@@ -40,15 +40,26 @@
             this.btnLast = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.appTypeNameTextBox = new System.Windows.Forms.TextBox();
-            this.homeApllianceWarehouseDataSet = new ApplianceWarehouse.HomeApllianceWarehouseDataSet();
             this.applianceTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.homeApllianceWarehouseDataSet = new ApplianceWarehouse.HomeApllianceWarehouseDataSet();
             this.applianceTypeTableAdapter = new ApplianceWarehouse.HomeApllianceWarehouseDataSetTableAdapters.applianceTypeTableAdapter();
             this.tableAdapterManager = new ApplianceWarehouse.HomeApllianceWarehouseDataSetTableAdapters.TableAdapterManager();
             this.MyUpdate = new System.Windows.Forms.Timer(this.components);
             vendorNameLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.homeApllianceWarehouseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applianceTypeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.homeApllianceWarehouseDataSet)).BeginInit();
             this.SuspendLayout();
+            // 
+            // vendorNameLabel
+            // 
+            vendorNameLabel.AutoSize = true;
+            vendorNameLabel.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            vendorNameLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            vendorNameLabel.Location = new System.Drawing.Point(11, 65);
+            vendorNameLabel.Name = "vendorNameLabel";
+            vendorNameLabel.Size = new System.Drawing.Size(285, 33);
+            vendorNameLabel.TabIndex = 13;
+            vendorNameLabel.Text = "Наименование категории";
             // 
             // btnNext
             // 
@@ -165,17 +176,6 @@
             this.lblTitle.TabIndex = 15;
             this.lblTitle.Text = "ТАБЛИЦА \"КАТЕГОРИИ\"";
             // 
-            // vendorNameLabel
-            // 
-            vendorNameLabel.AutoSize = true;
-            vendorNameLabel.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            vendorNameLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            vendorNameLabel.Location = new System.Drawing.Point(11, 65);
-            vendorNameLabel.Name = "vendorNameLabel";
-            vendorNameLabel.Size = new System.Drawing.Size(285, 33);
-            vendorNameLabel.TabIndex = 13;
-            vendorNameLabel.Text = "Наименование категории";
-            // 
             // appTypeNameTextBox
             // 
             this.appTypeNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.applianceTypeBindingSource, "appTypeName", true));
@@ -185,15 +185,15 @@
             this.appTypeNameTextBox.Size = new System.Drawing.Size(306, 33);
             this.appTypeNameTextBox.TabIndex = 14;
             // 
-            // homeApllianceWarehouseDataSet
-            // 
-            this.homeApllianceWarehouseDataSet.DataSetName = "HomeApllianceWarehouseDataSet";
-            this.homeApllianceWarehouseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // applianceTypeBindingSource
             // 
             this.applianceTypeBindingSource.DataMember = "applianceType";
             this.applianceTypeBindingSource.DataSource = this.homeApllianceWarehouseDataSet;
+            // 
+            // homeApllianceWarehouseDataSet
+            // 
+            this.homeApllianceWarehouseDataSet.DataSetName = "HomeApllianceWarehouseDataSet";
+            this.homeApllianceWarehouseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // applianceTypeTableAdapter
             // 
@@ -219,6 +219,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(619, 383);
+            this.ControlBox = false;
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnFirst);
@@ -230,11 +231,13 @@
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(vendorNameLabel);
             this.Controls.Add(this.appTypeNameTextBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form3";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ТАБЛИЦА \"КАТЕГОРИИ\"";
             this.Load += new System.EventHandler(this.Form3_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.homeApllianceWarehouseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.applianceTypeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.homeApllianceWarehouseDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

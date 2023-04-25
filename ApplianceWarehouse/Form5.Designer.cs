@@ -33,6 +33,9 @@
             System.Windows.Forms.Label label1;
             System.Windows.Forms.Label vendorNameLabel;
             this.delApplianceComboBox = new System.Windows.Forms.ComboBox();
+            this.deliveriesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.homeApllianceWarehouseDataSet = new ApplianceWarehouse.HomeApllianceWarehouseDataSet();
+            this.applianceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnNext = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnFirst = new System.Windows.Forms.Button();
@@ -42,25 +45,55 @@
             this.btnAddNew = new System.Windows.Forms.Button();
             this.btnLast = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.homeApllianceWarehouseDataSet = new ApplianceWarehouse.HomeApllianceWarehouseDataSet();
-            this.deliveriesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.deliveriesTableAdapter = new ApplianceWarehouse.HomeApllianceWarehouseDataSetTableAdapters.deliveriesTableAdapter();
             this.tableAdapterManager = new ApplianceWarehouse.HomeApllianceWarehouseDataSetTableAdapters.TableAdapterManager();
+            this.applianceTableAdapter = new ApplianceWarehouse.HomeApllianceWarehouseDataSetTableAdapters.applianceTableAdapter();
+            this.vendorsTableAdapter = new ApplianceWarehouse.HomeApllianceWarehouseDataSetTableAdapters.vendorsTableAdapter();
             this.delDateTextBox = new System.Windows.Forms.MaskedTextBox();
             this.delVendorComboBox = new System.Windows.Forms.ComboBox();
-            this.applianceBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.applianceTableAdapter = new ApplianceWarehouse.HomeApllianceWarehouseDataSetTableAdapters.applianceTableAdapter();
             this.vendorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.vendorsTableAdapter = new ApplianceWarehouse.HomeApllianceWarehouseDataSetTableAdapters.vendorsTableAdapter();
             this.MyUpdate = new System.Windows.Forms.Timer(this.components);
             label2 = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             vendorNameLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.homeApllianceWarehouseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deliveriesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.homeApllianceWarehouseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applianceBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vendorsBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            label2.Location = new System.Drawing.Point(11, 143);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(291, 33);
+            label2.TabIndex = 34;
+            label2.Text = "Дата последней поставки";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            label1.Location = new System.Drawing.Point(11, 104);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(132, 33);
+            label1.TabIndex = 31;
+            label1.Text = "Поставщик";
+            // 
+            // vendorNameLabel
+            // 
+            vendorNameLabel.AutoSize = true;
+            vendorNameLabel.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            vendorNameLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            vendorNameLabel.Location = new System.Drawing.Point(11, 65);
+            vendorNameLabel.Name = "vendorNameLabel";
+            vendorNameLabel.Size = new System.Drawing.Size(172, 33);
+            vendorNameLabel.TabIndex = 29;
+            vendorNameLabel.Text = "Наименование";
             // 
             // delApplianceComboBox
             // 
@@ -75,6 +108,21 @@
             this.delApplianceComboBox.TabIndex = 45;
             this.delApplianceComboBox.ValueMember = "appID";
             this.delApplianceComboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.delApplianceComboBox_KeyPress);
+            // 
+            // deliveriesBindingSource
+            // 
+            this.deliveriesBindingSource.DataMember = "deliveries";
+            this.deliveriesBindingSource.DataSource = this.homeApllianceWarehouseDataSet;
+            // 
+            // homeApllianceWarehouseDataSet
+            // 
+            this.homeApllianceWarehouseDataSet.DataSetName = "HomeApllianceWarehouseDataSet";
+            this.homeApllianceWarehouseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // applianceBindingSource
+            // 
+            this.applianceBindingSource.DataMember = "appliance";
+            this.applianceBindingSource.DataSource = this.homeApllianceWarehouseDataSet;
             // 
             // btnNext
             // 
@@ -180,28 +228,6 @@
             this.btnLast.UseVisualStyleBackColor = false;
             this.btnLast.Click += new System.EventHandler(this.btnLast_Click);
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            label2.Location = new System.Drawing.Point(11, 143);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(291, 33);
-            label2.TabIndex = 34;
-            label2.Text = "Дата последней поставки";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            label1.Location = new System.Drawing.Point(11, 104);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(132, 33);
-            label1.TabIndex = 31;
-            label1.Text = "Поставщик";
-            // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
@@ -212,27 +238,6 @@
             this.lblTitle.Size = new System.Drawing.Size(345, 45);
             this.lblTitle.TabIndex = 30;
             this.lblTitle.Text = "ТАБЛИЦА \"ПОСТАВКИ\"";
-            // 
-            // vendorNameLabel
-            // 
-            vendorNameLabel.AutoSize = true;
-            vendorNameLabel.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            vendorNameLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            vendorNameLabel.Location = new System.Drawing.Point(11, 65);
-            vendorNameLabel.Name = "vendorNameLabel";
-            vendorNameLabel.Size = new System.Drawing.Size(172, 33);
-            vendorNameLabel.TabIndex = 29;
-            vendorNameLabel.Text = "Наименование";
-            // 
-            // homeApllianceWarehouseDataSet
-            // 
-            this.homeApllianceWarehouseDataSet.DataSetName = "HomeApllianceWarehouseDataSet";
-            this.homeApllianceWarehouseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // deliveriesBindingSource
-            // 
-            this.deliveriesBindingSource.DataMember = "deliveries";
-            this.deliveriesBindingSource.DataSource = this.homeApllianceWarehouseDataSet;
             // 
             // deliveriesTableAdapter
             // 
@@ -246,6 +251,14 @@
             this.tableAdapterManager.deliveriesTableAdapter = this.deliveriesTableAdapter;
             this.tableAdapterManager.UpdateOrder = ApplianceWarehouse.HomeApllianceWarehouseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.vendorsTableAdapter = this.vendorsTableAdapter;
+            // 
+            // applianceTableAdapter
+            // 
+            this.applianceTableAdapter.ClearBeforeFill = true;
+            // 
+            // vendorsTableAdapter
+            // 
+            this.vendorsTableAdapter.ClearBeforeFill = true;
             // 
             // delDateTextBox
             // 
@@ -272,23 +285,10 @@
             this.delVendorComboBox.ValueMember = "vendorID";
             this.delVendorComboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.delVendorComboBox_KeyPress);
             // 
-            // applianceBindingSource
-            // 
-            this.applianceBindingSource.DataMember = "appliance";
-            this.applianceBindingSource.DataSource = this.homeApllianceWarehouseDataSet;
-            // 
-            // applianceTableAdapter
-            // 
-            this.applianceTableAdapter.ClearBeforeFill = true;
-            // 
             // vendorsBindingSource
             // 
             this.vendorsBindingSource.DataMember = "vendors";
             this.vendorsBindingSource.DataSource = this.homeApllianceWarehouseDataSet;
-            // 
-            // vendorsTableAdapter
-            // 
-            this.vendorsTableAdapter.ClearBeforeFill = true;
             // 
             // MyUpdate
             // 
@@ -301,6 +301,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(619, 461);
+            this.ControlBox = false;
             this.Controls.Add(this.delDateTextBox);
             this.Controls.Add(this.delVendorComboBox);
             this.Controls.Add(this.delApplianceComboBox);
@@ -316,11 +317,13 @@
             this.Controls.Add(label1);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(vendorNameLabel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form5";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ТАБЛИЦА \"ПОСТАВКИ\"";
             this.Load += new System.EventHandler(this.Form5_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.homeApllianceWarehouseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deliveriesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.homeApllianceWarehouseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.applianceBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vendorsBindingSource)).EndInit();
             this.ResumeLayout(false);

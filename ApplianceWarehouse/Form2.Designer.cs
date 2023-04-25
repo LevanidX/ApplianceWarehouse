@@ -56,6 +56,39 @@
             ((System.ComponentModel.ISupportInitialize)(this.vendorsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
+            // vendorNameLabel
+            // 
+            vendorNameLabel.AutoSize = true;
+            vendorNameLabel.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            vendorNameLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            vendorNameLabel.Location = new System.Drawing.Point(11, 65);
+            vendorNameLabel.Name = "vendorNameLabel";
+            vendorNameLabel.Size = new System.Drawing.Size(176, 33);
+            vendorNameLabel.TabIndex = 1;
+            vendorNameLabel.Text = "Производитель";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            label1.Location = new System.Drawing.Point(11, 104);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(105, 33);
+            label1.TabIndex = 8;
+            label1.Text = "Телефон";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            label2.Location = new System.Drawing.Point(11, 143);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(221, 33);
+            label2.TabIndex = 10;
+            label2.Text = "Электронная почта";
+            // 
             // homeApllianceWarehouseDataSet
             // 
             this.homeApllianceWarehouseDataSet.DataSetName = "HomeApllianceWarehouseDataSet";
@@ -79,17 +112,6 @@
             this.tableAdapterManager.UpdateOrder = ApplianceWarehouse.HomeApllianceWarehouseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.vendorsTableAdapter = this.vendorsTableAdapter;
             // 
-            // vendorNameLabel
-            // 
-            vendorNameLabel.AutoSize = true;
-            vendorNameLabel.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            vendorNameLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            vendorNameLabel.Location = new System.Drawing.Point(11, 65);
-            vendorNameLabel.Name = "vendorNameLabel";
-            vendorNameLabel.Size = new System.Drawing.Size(176, 33);
-            vendorNameLabel.TabIndex = 1;
-            vendorNameLabel.Text = "Производитель";
-            // 
             // vendorNameTextBox
             // 
             this.vendorNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vendorsBindingSource, "vendorName", true));
@@ -109,28 +131,6 @@
             this.lblTitle.Size = new System.Drawing.Size(451, 45);
             this.lblTitle.TabIndex = 7;
             this.lblTitle.Text = "ТАБЛИЦА \"ПРОИЗВОДИТЕЛИ\"";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            label1.Location = new System.Drawing.Point(11, 104);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(105, 33);
-            label1.TabIndex = 8;
-            label1.Text = "Телефон";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            label2.Location = new System.Drawing.Point(11, 143);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(221, 33);
-            label2.TabIndex = 10;
-            label2.Text = "Электронная почта";
             // 
             // vendorEmailAddressTextBox
             // 
@@ -266,6 +266,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(619, 461);
+            this.ControlBox = false;
             this.Controls.Add(this.vendorPhoneNumberTextBox);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnBack);
@@ -281,7 +282,9 @@
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(vendorNameLabel);
             this.Controls.Add(this.vendorNameTextBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ТАБЛИЦА \"ПРОИЗВОДИТЕЛИ\"";
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.homeApllianceWarehouseDataSet)).EndInit();

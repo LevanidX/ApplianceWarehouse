@@ -1,19 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ApplianceWarehouse
 {
     public partial class Form3 : Form
     {
-        private bool _isAdding;
-        private bool _isSaved;
+        EditTables edit = new EditTables();
+        MainMenu mainMenu = new MainMenu();
 
         public Form3()
         {
@@ -22,44 +15,21 @@ namespace ApplianceWarehouse
 
         private void Form3_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "homeApllianceWarehouseDataSet.applianceType". При необходимости она может быть перемещена или удалена.
             this.applianceTypeTableAdapter.Fill(this.homeApllianceWarehouseDataSet.applianceType);
 
-            _isSaved = true;
-            _isAdding = false;
+            edit.isSaved = true;
+            edit.isAdding = false;
         }
 
         private void btnExitToMainMenu_Click(object sender, EventArgs e)
         {
-            if (!_isSaved)
-            {
-                var result = MessageBox.Show(
-                    "Вы хотите сохранить внесенные изменения?",
-                    "Сохранение изменений",
-                    MessageBoxButtons.YesNoCancel,
-                    MessageBoxIcon.Question);
-
-                if (result == DialogResult.Yes)
-                {
-                    SaveEditings();
-                    InitializeMainMenu();
-                }
-                else if (result == DialogResult.No)
-                {
-                    InitializeMainMenu();
-                }
-            }
-            else
-            {
-                InitializeMainMenu();
-            }
+            mainMenu.ExitToMainMenu(this, applianceTypeBindingSource, tableAdapterManager, homeApllianceWarehouseDataSet);
         }
 
         private void btnAddNew_Click(object sender, EventArgs e)
         {
             applianceTypeBindingSource.AddNew();
-
-            _isSaved = false;
+            edit.isSaved = false;
         }
 
         private void btnLast_Click(object sender, EventArgs e)
@@ -84,29 +54,14 @@ namespace ApplianceWarehouse
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            try
-            {
-                applianceTypeBindingSource.RemoveCurrent();
-
-                _isSaved = false;
-            }
-            catch (System.InvalidOperationException)
-            {
-                MessageBox.Show(
-                    "Вы не можете удалить пустой элемент!\n" +
-                    "Заполните хотя бы одну карточку, \n" +
-                    "чтобы получить доступ ко всем функциям.",
-                    "Ошибка",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-            }
+            edit.DeleteItem(applianceTypeBindingSource);
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (!_isAdding)
+            if (!edit.isAdding)
             {
-                SaveEditings();
+                edit.SaveEditings(this, applianceTypeBindingSource, tableAdapterManager, homeApllianceWarehouseDataSet);
             }
         }
 
@@ -114,57 +69,19 @@ namespace ApplianceWarehouse
         {
             CheckAdding();
 
-            if (_isAdding)
-            {
-                btnAddNew.Enabled = false;
-                btnLast.Enabled = false;
-                btnFirst.Enabled = false;
-                btnBack.Enabled = false;
-                btnNext.Enabled = false;
-                btnSave.Enabled = false;
-                btnExitToMainMenu.Enabled = false;
-
-                btnDelete.Text = "Отмена";
-            }
-            else
-            {
-                btnAddNew.Enabled = true;
-                btnLast.Enabled = true;
-                btnFirst.Enabled = true;
-                btnBack.Enabled = true;
-                btnNext.Enabled = true;
-                btnSave.Enabled = true;
-                btnExitToMainMenu.Enabled = true;
-
-                btnDelete.Text = "Удалить";
-            }
-        }
-
-        private void InitializeMainMenu()
-        {
-            Form1 f1 = new Form1();
-            f1.Show();
-            this.Close();
-        }
-
-        private void SaveEditings()
-        {
-            this.Validate();
-            this.applianceTypeBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.homeApllianceWarehouseDataSet);
-
-            _isSaved = true;
+            edit.LockingAndUnlockingButtons(btnAddNew, btnLast, btnFirst, btnBack, btnNext,
+                btnSave, btnExitToMainMenu, btnDelete);
         }
 
         private void CheckAdding()
         {
             if (appTypeNameTextBox.Text == "")
             {
-                _isAdding = true;
+                edit.isAdding = true;
             }
             else
             {
-                _isAdding = false;
+                edit.isAdding = false;
             }
         }
     }

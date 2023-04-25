@@ -1,17 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ApplianceWarehouse
 {
     public partial class Form1 : Form
     {
+        MainMenu mainMenu = new MainMenu();
+
         public Form1()
         {
             InitializeComponent();
@@ -24,44 +19,42 @@ namespace ApplianceWarehouse
 
         private void btnVendorsEdit_Click(object sender, EventArgs e)
         {
-            Form2 f2 = new Form2();
-            f2.Show();
-            this.Hide();
+            mainMenu.InitializeNewWindow(this, new Form2());
         }
 
         private void btnApplianceTypeEdit_Click(object sender, EventArgs e)
         {
-            Form3 f3 = new Form3();
-            f3.Show();
-            this.Hide();
+            mainMenu.InitializeNewWindow(this, new Form3());
         }
 
         private void btnApplianceEdit_Click(object sender, EventArgs e)
         {
-            Form4 f4 = new Form4();
-            f4.Show();
-            this.Hide();
+            mainMenu.InitializeNewWindow(this, new Form4());
         }
 
         private void btnDeliveriesEdit_Click(object sender, EventArgs e)
         {
-            Form5 f5 = new Form5();
-            f5.Show();
-            this.Hide();
+            mainMenu.InitializeNewWindow(this, new Form5());
         }
 
         private void btnVendorsView_Click(object sender, EventArgs e)
         {
-            Form6 f6 = new Form6();
-            f6.Show();
-            this.Hide();
+            mainMenu.InitializeNewWindow(this, new Form6());
         }
 
         private void btnApplianceTypeView_Click(object sender, EventArgs e)
         {
-            Form7 f7 = new Form7();
-            f7.Show();
-            this.Hide();
+            mainMenu.InitializeNewWindow(this, new Form7());
+        }
+
+        private void btnApplianceView_Click(object sender, EventArgs e)
+        {
+            mainMenu.InitializeNewWindow(this, new Form8());
+        }
+
+        private void btnDeliveriesView_Click(object sender, EventArgs e)
+        {
+           mainMenu.InitializeNewWindow(this, new Form9());
         }
     }
 }

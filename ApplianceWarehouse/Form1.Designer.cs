@@ -30,10 +30,10 @@
         {
             this.lblTitle = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnVendorsEdit = new System.Windows.Forms.Button();
-            this.btnApplianceTypeEdit = new System.Windows.Forms.Button();
-            this.btnApplianceEdit = new System.Windows.Forms.Button();
             this.btnDeliveriesEdit = new System.Windows.Forms.Button();
+            this.btnApplianceEdit = new System.Windows.Forms.Button();
+            this.btnApplianceTypeEdit = new System.Windows.Forms.Button();
+            this.btnVendorsEdit = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnDeliveriesView = new System.Windows.Forms.Button();
             this.btnApplianceView = new System.Windows.Forms.Button();
@@ -69,27 +69,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Редактирование таблиц";
             // 
-            // btnVendorsEdit
+            // btnDeliveriesEdit
             // 
-            this.btnVendorsEdit.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnVendorsEdit.Location = new System.Drawing.Point(6, 39);
-            this.btnVendorsEdit.Name = "btnVendorsEdit";
-            this.btnVendorsEdit.Size = new System.Drawing.Size(422, 50);
-            this.btnVendorsEdit.TabIndex = 0;
-            this.btnVendorsEdit.Text = "Производители";
-            this.btnVendorsEdit.UseVisualStyleBackColor = false;
-            this.btnVendorsEdit.Click += new System.EventHandler(this.btnVendorsEdit_Click);
-            // 
-            // btnApplianceTypeEdit
-            // 
-            this.btnApplianceTypeEdit.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnApplianceTypeEdit.Location = new System.Drawing.Point(6, 95);
-            this.btnApplianceTypeEdit.Name = "btnApplianceTypeEdit";
-            this.btnApplianceTypeEdit.Size = new System.Drawing.Size(422, 50);
-            this.btnApplianceTypeEdit.TabIndex = 0;
-            this.btnApplianceTypeEdit.Text = "Категории";
-            this.btnApplianceTypeEdit.UseVisualStyleBackColor = false;
-            this.btnApplianceTypeEdit.Click += new System.EventHandler(this.btnApplianceTypeEdit_Click);
+            this.btnDeliveriesEdit.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnDeliveriesEdit.Location = new System.Drawing.Point(6, 207);
+            this.btnDeliveriesEdit.Name = "btnDeliveriesEdit";
+            this.btnDeliveriesEdit.Size = new System.Drawing.Size(422, 50);
+            this.btnDeliveriesEdit.TabIndex = 0;
+            this.btnDeliveriesEdit.Text = "Поставки";
+            this.btnDeliveriesEdit.UseVisualStyleBackColor = false;
+            this.btnDeliveriesEdit.Click += new System.EventHandler(this.btnDeliveriesEdit_Click);
             // 
             // btnApplianceEdit
             // 
@@ -102,16 +91,27 @@
             this.btnApplianceEdit.UseVisualStyleBackColor = false;
             this.btnApplianceEdit.Click += new System.EventHandler(this.btnApplianceEdit_Click);
             // 
-            // btnDeliveriesEdit
+            // btnApplianceTypeEdit
             // 
-            this.btnDeliveriesEdit.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnDeliveriesEdit.Location = new System.Drawing.Point(6, 207);
-            this.btnDeliveriesEdit.Name = "btnDeliveriesEdit";
-            this.btnDeliveriesEdit.Size = new System.Drawing.Size(422, 50);
-            this.btnDeliveriesEdit.TabIndex = 0;
-            this.btnDeliveriesEdit.Text = "Поставки";
-            this.btnDeliveriesEdit.UseVisualStyleBackColor = false;
-            this.btnDeliveriesEdit.Click += new System.EventHandler(this.btnDeliveriesEdit_Click);
+            this.btnApplianceTypeEdit.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnApplianceTypeEdit.Location = new System.Drawing.Point(6, 95);
+            this.btnApplianceTypeEdit.Name = "btnApplianceTypeEdit";
+            this.btnApplianceTypeEdit.Size = new System.Drawing.Size(422, 50);
+            this.btnApplianceTypeEdit.TabIndex = 0;
+            this.btnApplianceTypeEdit.Text = "Категории";
+            this.btnApplianceTypeEdit.UseVisualStyleBackColor = false;
+            this.btnApplianceTypeEdit.Click += new System.EventHandler(this.btnApplianceTypeEdit_Click);
+            // 
+            // btnVendorsEdit
+            // 
+            this.btnVendorsEdit.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnVendorsEdit.Location = new System.Drawing.Point(6, 39);
+            this.btnVendorsEdit.Name = "btnVendorsEdit";
+            this.btnVendorsEdit.Size = new System.Drawing.Size(422, 50);
+            this.btnVendorsEdit.TabIndex = 0;
+            this.btnVendorsEdit.Text = "Производители";
+            this.btnVendorsEdit.UseVisualStyleBackColor = false;
+            this.btnVendorsEdit.Click += new System.EventHandler(this.btnVendorsEdit_Click);
             // 
             // groupBox2
             // 
@@ -137,6 +137,7 @@
             this.btnDeliveriesView.TabIndex = 0;
             this.btnDeliveriesView.Text = "Поставки";
             this.btnDeliveriesView.UseVisualStyleBackColor = false;
+            this.btnDeliveriesView.Click += new System.EventHandler(this.btnDeliveriesView_Click);
             // 
             // btnApplianceView
             // 
@@ -147,6 +148,7 @@
             this.btnApplianceView.TabIndex = 0;
             this.btnApplianceView.Text = "Бытовая техника";
             this.btnApplianceView.UseVisualStyleBackColor = false;
+            this.btnApplianceView.Click += new System.EventHandler(this.btnApplianceView_Click);
             // 
             // btnApplianceTypeView
             // 
@@ -189,12 +191,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(452, 722);
+            this.ControlBox = false;
             this.Controls.Add(this.btnExitProgramm);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblTitle);
             this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ПРОГРАММНЫЙ МОДУЛЬ \"СКЛАД БЫТОВОЙ ТЕХНИКИ\"";
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);

@@ -1,4 +1,5 @@
 ﻿using ApplianceWarehouse.HomeApllianceWarehouseDataSetTableAdapters;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace ApplianceWarehouse
@@ -44,6 +45,23 @@ namespace ApplianceWarehouse
         {
             newForm.Show();
             currentForm.Hide();
+        }
+
+        public void InitializeNewButtons(Form1 mainMenu, Button thisButton, bool isClicked)
+        {
+            thisButton.BackColor = isClicked ? Color.Gray : Color.OrangeRed;
+
+            mainMenu.btnEdit.Enabled = isClicked;
+            mainMenu.btnView.Enabled = isClicked;
+
+            mainMenu.btnBack.Enabled = isClicked;
+        }
+
+        public void LockButtons(Button btnFirst, Button btnSecond, Button btnThird, bool isClicked)
+        {
+            btnFirst.Enabled = !isClicked;
+            btnSecond.Enabled = !isClicked;
+            btnThird.Enabled = !isClicked;
         }
     }
 }

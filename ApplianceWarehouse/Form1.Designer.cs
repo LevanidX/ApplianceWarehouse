@@ -29,171 +29,149 @@
         private void InitializeComponent()
         {
             this.lblTitle = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnDeliveriesEdit = new System.Windows.Forms.Button();
-            this.btnApplianceEdit = new System.Windows.Forms.Button();
-            this.btnApplianceTypeEdit = new System.Windows.Forms.Button();
-            this.btnVendorsEdit = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnDeliveriesView = new System.Windows.Forms.Button();
-            this.btnApplianceView = new System.Windows.Forms.Button();
-            this.btnApplianceTypeView = new System.Windows.Forms.Button();
-            this.btnVendorsView = new System.Windows.Forms.Button();
             this.btnExitProgramm = new System.Windows.Forms.Button();
+            this.btnVendors = new System.Windows.Forms.Button();
+            this.btnApplianceType = new System.Windows.Forms.Button();
+            this.btnAppliance = new System.Windows.Forms.Button();
+            this.btnDeliveries = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnView = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblTitle.Location = new System.Drawing.Point(6, 9);
+            this.lblTitle.Location = new System.Drawing.Point(142, 9);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(440, 90);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "   ПРОГРАММНЫЙ МОДУЛЬ\r\n\"СКЛАД БЫТОВОЙ ТЕХНИКИ\"";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.btnDeliveriesEdit);
-            this.groupBox1.Controls.Add(this.btnApplianceEdit);
-            this.groupBox1.Controls.Add(this.btnApplianceTypeEdit);
-            this.groupBox1.Controls.Add(this.btnVendorsEdit);
-            this.groupBox1.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.groupBox1.Location = new System.Drawing.Point(12, 102);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(434, 264);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Редактирование таблиц";
-            // 
-            // btnDeliveriesEdit
-            // 
-            this.btnDeliveriesEdit.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnDeliveriesEdit.Location = new System.Drawing.Point(6, 207);
-            this.btnDeliveriesEdit.Name = "btnDeliveriesEdit";
-            this.btnDeliveriesEdit.Size = new System.Drawing.Size(422, 50);
-            this.btnDeliveriesEdit.TabIndex = 0;
-            this.btnDeliveriesEdit.Text = "Поставки";
-            this.btnDeliveriesEdit.UseVisualStyleBackColor = false;
-            this.btnDeliveriesEdit.Click += new System.EventHandler(this.btnDeliveriesEdit_Click);
-            // 
-            // btnApplianceEdit
-            // 
-            this.btnApplianceEdit.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnApplianceEdit.Location = new System.Drawing.Point(6, 151);
-            this.btnApplianceEdit.Name = "btnApplianceEdit";
-            this.btnApplianceEdit.Size = new System.Drawing.Size(422, 50);
-            this.btnApplianceEdit.TabIndex = 0;
-            this.btnApplianceEdit.Text = "Бытовая техника";
-            this.btnApplianceEdit.UseVisualStyleBackColor = false;
-            this.btnApplianceEdit.Click += new System.EventHandler(this.btnApplianceEdit_Click);
-            // 
-            // btnApplianceTypeEdit
-            // 
-            this.btnApplianceTypeEdit.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnApplianceTypeEdit.Location = new System.Drawing.Point(6, 95);
-            this.btnApplianceTypeEdit.Name = "btnApplianceTypeEdit";
-            this.btnApplianceTypeEdit.Size = new System.Drawing.Size(422, 50);
-            this.btnApplianceTypeEdit.TabIndex = 0;
-            this.btnApplianceTypeEdit.Text = "Категории";
-            this.btnApplianceTypeEdit.UseVisualStyleBackColor = false;
-            this.btnApplianceTypeEdit.Click += new System.EventHandler(this.btnApplianceTypeEdit_Click);
-            // 
-            // btnVendorsEdit
-            // 
-            this.btnVendorsEdit.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnVendorsEdit.Location = new System.Drawing.Point(6, 39);
-            this.btnVendorsEdit.Name = "btnVendorsEdit";
-            this.btnVendorsEdit.Size = new System.Drawing.Size(422, 50);
-            this.btnVendorsEdit.TabIndex = 0;
-            this.btnVendorsEdit.Text = "Производители";
-            this.btnVendorsEdit.UseVisualStyleBackColor = false;
-            this.btnVendorsEdit.Click += new System.EventHandler(this.btnVendorsEdit_Click);
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.btnDeliveriesView);
-            this.groupBox2.Controls.Add(this.btnApplianceView);
-            this.groupBox2.Controls.Add(this.btnApplianceTypeView);
-            this.groupBox2.Controls.Add(this.btnVendorsView);
-            this.groupBox2.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.groupBox2.Location = new System.Drawing.Point(12, 372);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(434, 264);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Просмотр таблиц";
-            // 
-            // btnDeliveriesView
-            // 
-            this.btnDeliveriesView.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnDeliveriesView.Location = new System.Drawing.Point(6, 207);
-            this.btnDeliveriesView.Name = "btnDeliveriesView";
-            this.btnDeliveriesView.Size = new System.Drawing.Size(422, 50);
-            this.btnDeliveriesView.TabIndex = 0;
-            this.btnDeliveriesView.Text = "Поставки";
-            this.btnDeliveriesView.UseVisualStyleBackColor = false;
-            this.btnDeliveriesView.Click += new System.EventHandler(this.btnDeliveriesView_Click);
-            // 
-            // btnApplianceView
-            // 
-            this.btnApplianceView.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnApplianceView.Location = new System.Drawing.Point(6, 151);
-            this.btnApplianceView.Name = "btnApplianceView";
-            this.btnApplianceView.Size = new System.Drawing.Size(422, 50);
-            this.btnApplianceView.TabIndex = 0;
-            this.btnApplianceView.Text = "Бытовая техника";
-            this.btnApplianceView.UseVisualStyleBackColor = false;
-            this.btnApplianceView.Click += new System.EventHandler(this.btnApplianceView_Click);
-            // 
-            // btnApplianceTypeView
-            // 
-            this.btnApplianceTypeView.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnApplianceTypeView.Location = new System.Drawing.Point(6, 95);
-            this.btnApplianceTypeView.Name = "btnApplianceTypeView";
-            this.btnApplianceTypeView.Size = new System.Drawing.Size(422, 50);
-            this.btnApplianceTypeView.TabIndex = 0;
-            this.btnApplianceTypeView.Text = "Категории";
-            this.btnApplianceTypeView.UseVisualStyleBackColor = false;
-            this.btnApplianceTypeView.Click += new System.EventHandler(this.btnApplianceTypeView_Click);
-            // 
-            // btnVendorsView
-            // 
-            this.btnVendorsView.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnVendorsView.Location = new System.Drawing.Point(6, 39);
-            this.btnVendorsView.Name = "btnVendorsView";
-            this.btnVendorsView.Size = new System.Drawing.Size(422, 50);
-            this.btnVendorsView.TabIndex = 0;
-            this.btnVendorsView.Text = "Производители";
-            this.btnVendorsView.UseVisualStyleBackColor = false;
-            this.btnVendorsView.Click += new System.EventHandler(this.btnVendorsView_Click);
             // 
             // btnExitProgramm
             // 
             this.btnExitProgramm.BackColor = System.Drawing.Color.DarkRed;
             this.btnExitProgramm.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnExitProgramm.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnExitProgramm.Location = new System.Drawing.Point(12, 642);
+            this.btnExitProgramm.Location = new System.Drawing.Point(12, 579);
             this.btnExitProgramm.Name = "btnExitProgramm";
-            this.btnExitProgramm.Size = new System.Drawing.Size(434, 76);
+            this.btnExitProgramm.Size = new System.Drawing.Size(682, 85);
             this.btnExitProgramm.TabIndex = 13;
             this.btnExitProgramm.Text = "ВЫХОД";
             this.btnExitProgramm.UseVisualStyleBackColor = false;
             this.btnExitProgramm.Click += new System.EventHandler(this.btnExitProgramm_Click);
+            // 
+            // btnVendors
+            // 
+            this.btnVendors.BackColor = System.Drawing.Color.OrangeRed;
+            this.btnVendors.Location = new System.Drawing.Point(6, 39);
+            this.btnVendors.Name = "btnVendors";
+            this.btnVendors.Size = new System.Drawing.Size(422, 84);
+            this.btnVendors.TabIndex = 0;
+            this.btnVendors.Text = "Производители";
+            this.btnVendors.UseVisualStyleBackColor = false;
+            this.btnVendors.Click += new System.EventHandler(this.btnVendors_Click);
+            // 
+            // btnApplianceType
+            // 
+            this.btnApplianceType.BackColor = System.Drawing.Color.OrangeRed;
+            this.btnApplianceType.Location = new System.Drawing.Point(6, 129);
+            this.btnApplianceType.Name = "btnApplianceType";
+            this.btnApplianceType.Size = new System.Drawing.Size(422, 84);
+            this.btnApplianceType.TabIndex = 0;
+            this.btnApplianceType.Text = "Категории";
+            this.btnApplianceType.UseVisualStyleBackColor = false;
+            this.btnApplianceType.Click += new System.EventHandler(this.btnApplianceType_Click);
+            // 
+            // btnAppliance
+            // 
+            this.btnAppliance.BackColor = System.Drawing.Color.OrangeRed;
+            this.btnAppliance.Location = new System.Drawing.Point(6, 219);
+            this.btnAppliance.Name = "btnAppliance";
+            this.btnAppliance.Size = new System.Drawing.Size(422, 84);
+            this.btnAppliance.TabIndex = 0;
+            this.btnAppliance.Text = "Бытовая техника";
+            this.btnAppliance.UseVisualStyleBackColor = false;
+            this.btnAppliance.Click += new System.EventHandler(this.btnAppliance_Click);
+            // 
+            // btnDeliveries
+            // 
+            this.btnDeliveries.BackColor = System.Drawing.Color.OrangeRed;
+            this.btnDeliveries.Location = new System.Drawing.Point(6, 309);
+            this.btnDeliveries.Name = "btnDeliveries";
+            this.btnDeliveries.Size = new System.Drawing.Size(422, 84);
+            this.btnDeliveries.TabIndex = 0;
+            this.btnDeliveries.Text = "Поставки";
+            this.btnDeliveries.UseVisualStyleBackColor = false;
+            this.btnDeliveries.Click += new System.EventHandler(this.btnDeliveries_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnView);
+            this.groupBox1.Controls.Add(this.btnEdit);
+            this.groupBox1.Controls.Add(this.btnDeliveries);
+            this.groupBox1.Controls.Add(this.btnAppliance);
+            this.groupBox1.Controls.Add(this.btnApplianceType);
+            this.groupBox1.Controls.Add(this.btnVendors);
+            this.groupBox1.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.groupBox1.Location = new System.Drawing.Point(12, 102);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(682, 401);
+            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Выберите действие";
+            // 
+            // btnView
+            // 
+            this.btnView.BackColor = System.Drawing.Color.Goldenrod;
+            this.btnView.Enabled = false;
+            this.btnView.Location = new System.Drawing.Point(434, 219);
+            this.btnView.Name = "btnView";
+            this.btnView.Size = new System.Drawing.Size(242, 174);
+            this.btnView.TabIndex = 2;
+            this.btnView.Text = "Просмотр данных";
+            this.btnView.UseVisualStyleBackColor = false;
+            this.btnView.Click += new System.EventHandler(this.btnView_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnEdit.Enabled = false;
+            this.btnEdit.Location = new System.Drawing.Point(434, 39);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(242, 174);
+            this.btnEdit.TabIndex = 1;
+            this.btnEdit.Text = "Редактирование\r\nДобавление";
+            this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.SlateGray;
+            this.btnBack.Enabled = false;
+            this.btnBack.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnBack.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnBack.Location = new System.Drawing.Point(12, 509);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(682, 64);
+            this.btnBack.TabIndex = 14;
+            this.btnBack.Text = "НАЗАД";
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
-            this.ClientSize = new System.Drawing.Size(452, 722);
+            this.ClientSize = new System.Drawing.Size(702, 667);
             this.ControlBox = false;
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnExitProgramm);
-            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblTitle);
             this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -202,7 +180,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ПРОГРАММНЫЙ МОДУЛЬ \"СКЛАД БЫТОВОЙ ТЕХНИКИ\"";
             this.groupBox1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -211,17 +188,15 @@
         #endregion
 
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnDeliveriesEdit;
-        private System.Windows.Forms.Button btnApplianceEdit;
-        private System.Windows.Forms.Button btnApplianceTypeEdit;
-        private System.Windows.Forms.Button btnVendorsEdit;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button btnDeliveriesView;
-        private System.Windows.Forms.Button btnApplianceView;
-        private System.Windows.Forms.Button btnApplianceTypeView;
-        private System.Windows.Forms.Button btnVendorsView;
         private System.Windows.Forms.Button btnExitProgramm;
+        private System.Windows.Forms.Button btnVendors;
+        private System.Windows.Forms.Button btnApplianceType;
+        private System.Windows.Forms.Button btnAppliance;
+        private System.Windows.Forms.Button btnDeliveries;
+        private System.Windows.Forms.GroupBox groupBox1;
+        public System.Windows.Forms.Button btnView;
+        public System.Windows.Forms.Button btnEdit;
+        public System.Windows.Forms.Button btnBack;
     }
 }
 
